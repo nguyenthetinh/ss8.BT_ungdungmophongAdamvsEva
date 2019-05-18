@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Apple=function () {
+        this.weightApple=10;
+        this.getWeight=function () {
+            return this.weightApple;
+        }
+    };
+    let Human=function (name,gender,weight) {
+        this.name=name;
+        this.gender=gender;
+        this.weight = weight;
+        this.say=function () {
+            console.log("Xin chao t la: "+this.name+ "," +"gioi tinh: " + this.gender+ ", "+ "can nang: " +this.weight);
+        };
+        this.eat=function () {
+            this.weight++;
+            console.log("can nang cua toi:"+this.name+ "sau khi an 1 mieng tao la "+ this.weight)
+        };
+        this.checkApple=function (tao) {
+            this.tao=tao
+            console.log("khoi luong tao la: "+this.tao)
+        }
+    };
+    let apple=new Apple();
+    let sotao=apple.getWeight();
+    let adam=new Human("Adam","nam",70);
+    let eva=new Human("Eva","nu",50);
+    adam.say();
+    eva.say();
+    adam.checkApple(sotao);
+    for (let i=0; ;i++){
+        if (sotao>0){
+            adam.eat();
+            sotao--;
+            console.log(sotao);
+            eva.eat();
+            sotao--;
+            console.log(sotao);
+
+        } else {
+            console.log("oi het tao roi");
+            break;
+        }
+    }
+
+</script>
+</body>
+</html>
